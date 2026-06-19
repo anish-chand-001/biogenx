@@ -1,0 +1,165 @@
+.hero {
+  min-height: 100vh;
+  background: #f2efe7;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 80px 8% 40px;
+  gap: 4rem;
+  overflow: hidden;
+}
+
+.imageContainer {
+  flex: 1.2; /* Keeps the image area larger than the text area */
+  position: relative;
+  height: 550px; /* Gives a solid height for 'fill' layout to expand into */
+  width: 100%;
+}
+
+.heroImage {
+  object-fit: contain; /* Ensures the full image is visible without weird cropping */
+  object-position: center;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #B79B6F;
+}
+
+.content h1 span {
+  color: #10243C;
+}
+
+.content p {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
+  color: #5c5c5c;
+  max-width: 500px;
+}
+
+.content button {
+  margin-top: 1.5rem;
+  width: fit-content;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 14px;
+  background: #10243C;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.content button:hover {
+  transform: translateY(-3px);
+  background: #23456b;
+}
+
+/* ---------- Tablet & Mobile Breakpoints ---------- */
+
+@media (max-width: 1024px) {
+  .hero {
+    gap: 2rem;
+    padding: 100px 5% 40px;
+  }
+
+  .imageContainer {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: row; /* Keeps image on left, content on right */
+    gap: 1.5rem;
+    padding: 80px 20px 40px;
+    min-height: auto; /* Prevents stretching too long on mobile */
+  }
+
+  .imageContainer {
+    flex: 1.1;
+    height: 380px; /* Adjusts image frame for mobile viewports */
+  }
+
+  .content {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .content h1 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+  }
+
+  .content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-top: 0.8rem;
+  }
+
+  .content button {
+    margin-top: 1rem;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .hero {
+    gap: 0.8rem;                  /* Tighten the gap so text has room */
+    padding: 50px 10px 20px;       /* Reduce padding to maximize viewport space */
+    align-items: center;          /* Center items vertically */
+    height: 90vh;                 /* Force the hero section to take up most of the screen height */
+  }
+
+  .imageContainer {
+    flex: 2.5;             
+   position: relative; /* REQUIRED for 'fill' to work */
+  width: 100%;       /* Or a flex basis */
+  height: 300px;               /* Lets the container fill the height of the hero section */
+           /* Prevents it from becoming awkwardly tall */
+  }
+
+  .heroImage {
+    object-fit: cover;            /* Cuts off empty background space and zooms into the mother/baby */
+    object-position: left center; /* Keeps the focus shifted towards the subjects */
+  }
+
+  .content {
+    flex: 1;                      /* Keeps text contained to its side */
+    z-index: 2;                   /* Ensures text stays safely on top if things overlap slightly */
+  }
+
+  .content h1 {
+    font-size: 1.6rem;            /* Scale down slightly so long words don't break awkwardly on tiny screens */
+    line-height: 1.1;
+  }
+
+  .content p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    margin-top: 0.5rem;
+  }
+
+  .content button {
+    margin-top: 0.8rem;
+    padding: 10px 14px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+  }
+}
