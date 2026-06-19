@@ -1,5 +1,3 @@
-
-
 'use client'
 
 import { useLayoutEffect, useRef } from 'react'
@@ -7,7 +5,7 @@ import { gsap } from 'gsap'
 
 interface LoaderProps {
   onLoadingComplete: () => void
-  loading: boolean
+  loading?: boolean // 👈 Added '?' to make it optional, fixing the deployment crash!
 }
 
 export default function Loader({
@@ -18,24 +16,24 @@ export default function Loader({
 
   useLayoutEffect(() => {
     const tl = gsap.timeline({
-  onComplete: () => {
-    onLoadingComplete()
-  },
-})
+      onComplete: () => {
+        onLoadingComplete()
+      },
+    })
 
-tl.to(logoRef.current, {
-  clipPath: 'inset(0 0% 0 0)',
-  duration: 1.2,
-  ease: 'expo.inOut',
-})
+    tl.to(logoRef.current, {
+      clipPath: 'inset(0 0% 0 0)',
+      duration: 1.2,
+      ease: 'expo.inOut',
+    })
 
-tl.to({}, { duration: 0.3 })
+    tl.to({}, { duration: 0.3 })
 
-tl.to(loaderRef.current, {
-  xPercent: 100,
-  duration: 1,
-  ease: 'expo.inOut',
-})
+    tl.to(loaderRef.current, {
+      xPercent: 100,
+      duration: 1,
+      ease: 'expo.inOut',
+    })
 
     return () => {
       tl.kill()
