@@ -1,0 +1,42 @@
+/* Main Page Screen Framework Wrapper */
+.mainScrollShell {
+  @apply h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-[#f2efe7];
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Viewport Layout Sections — Pushes content down below your fixed header navbar */
+.viewportSection {
+  @apply h-screen flex flex-col justify-center snap-start relative px-[6%] md:px-[8%] overflow-hidden pt-[110px] md:pt-[130px];
+  font-family: 'Sentient', serif;
+  padding-top: 180px;
+}
+
+/* Floating Navigation Indicator Track (Desktop Only) */
+.floatingNav {
+  @apply hidden md:flex fixed right-10 top-1/2 -translate-y-1/2 flex-col gap-6 z-50;
+}
+
+/* Base style for inactive nav dots */
+.navDot {
+  @apply w-2.5 h-2.5 bg-[rgba(16,36,60,0.25)] rounded-full transition-all duration-500 ease-out;
+  @apply hover:bg-[#10243C] hover:scale-125;
+  border: 1px solid rgba(16, 36, 60, 0.1);
+}
+
+/* Luxury active state matching your premium theme color palette */
+.navDotActive {
+  @apply bg-[#10243C] scale-150 !important;
+  box-shadow: 0 0 0 4px rgba(183, 155, 111, 0.25); /* Adds a subtle gold aura matching #B79B6F */
+  border-color: #10243C;
+}
+
+/* Universal Cross-Browser Utilities to Strip Scrollbars */
+.noScrollbar {
+  scrollbar-width: none !important;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+

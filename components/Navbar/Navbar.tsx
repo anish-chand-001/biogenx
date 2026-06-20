@@ -20,13 +20,15 @@ export default function Navbar() {
     <>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <Image
-            src="/logo/logo-biogenx.png"
-            alt="BioGenX"
-            width={140}
-            height={35}
-            priority
-          />
+          <Link href="/" className="display-block cursor-pointer">
+            <Image
+              src="/logo/logo-biogenx.png"
+              alt="BioGenX Logo"
+              width={140}
+              height={35}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}

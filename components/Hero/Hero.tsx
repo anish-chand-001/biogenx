@@ -1,6 +1,7 @@
 
 import Image from 'next/image'
 import styles from './Hero.module.css'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -32,9 +33,11 @@ export default function Hero() {
           for women and growing families.
         </p>
 
-        <button>
-          Explore Our Products →
-        </button>
+        <Link href="/solutions" passHref>
+          <button>
+            Explore Our Products →
+          </button>
+        </Link>
       </div>
     </section>
   )

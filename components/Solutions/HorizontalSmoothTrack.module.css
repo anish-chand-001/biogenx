@@ -1,0 +1,108 @@
+.trackContainer {
+  @apply w-full flex flex-col relative;
+}
+
+.headerBlock {
+  @apply flex items-end justify-between mb-6 md:mb-10 text-left w-full;
+}
+
+.titleArea {
+  @apply flex flex-col;
+}
+
+.taglineText {
+  @apply text-[0.8rem] tracking-[3px] text-[#B79B6F] font-bold uppercase block mb-2;
+}
+
+.titleText {
+  @apply text-[clamp(2.3rem,4.5vw,3.5rem)] text-[#10243C] font-normal leading-none;
+}
+
+/* New Relative Layout Frame for Flawless Arrow Floating */
+.carouselWrapper {
+  @apply w-full relative flex items-center;
+}
+
+/* Master Floating Arrow Blueprint */
+.arrowBtn {
+  @apply hidden md:flex absolute w-14 h-14 rounded-full bg-[#FAF7F2]/90 backdrop-blur-md;
+  @apply border border-[rgba(16,36,60,0.1)] text-[#10243C] text-xl items-center justify-center;
+  @apply cursor-pointer transition-all duration-500 ease-in-out select-none z-30 opacity-0 pointer-events-none scale-75;
+  box-shadow: 0 10px 30px rgba(16, 36, 60, 0.08);
+}
+
+/* Luxury Micro-Interactions */
+.arrowBtn:hover {
+  @apply bg-[#10243C] text-[#FAF7F2] border-[#10243C] scale-110;
+  box-shadow: 0 15px 35px rgba(16, 36, 60, 0.2);
+}
+
+.arrowBtn:active {
+  @apply scale-95;
+}
+
+/* Precision Alignment Placements over the Track Surface */
+.leftArrow {
+  @apply left-4;
+}
+
+.rightArrow {
+  @apply right-4;
+}
+
+/* Smooth fade-in class applied via state updates */
+.arrowVisible {
+  @apply opacity-100 scale-100 pointer-events-auto;
+}
+
+.swipingTrack {
+  @apply flex gap-8 overflow-x-auto select-none cursor-grab pb-8 snap-x snap-mandatory md:snap-none w-full;
+}
+
+.trackGrabbing {
+  @apply cursor-grabbing !important;
+}
+
+.productCard {
+  @apply flex-[0_0_310px] sm:flex-[0_0_280px] bg-[#FAF7F2] rounded-[24px] overflow-hidden;
+  @apply border border-[rgba(16,36,60,0.03)] snap-start transition-all duration-300 transform;
+  @apply hover:-translate-y-1 hover:shadow-xl;
+  box-shadow: 0 15px 40px rgba(16, 36, 60, 0.02);
+}
+
+/* Preserved compact design height configurations */
+.imageWrapper {
+  @apply h-[260px] bg-[rgba(183,155,111,0.06)] border-b border-[rgba(183,155,111,0.1)] flex items-center justify-center relative;
+}
+
+.contentBlock {
+  @apply p-6 flex flex-col justify-between h-[210px];
+}
+
+.cardTitle {
+  @apply text-[#10243C] text-lg font-medium mb-2.5;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.cardDesc {
+  @apply text-[#6e6e6e] text-[0.85rem] leading-relaxed line-clamp-4;
+  font-family: 'Nunito', sans-serif;
+}
+
+.cardFooterLink {
+  @apply flex items-center text-[0.8rem] font-semibold text-[#B79B6F] tracking-wider uppercase pt-4;
+  @apply border-t border-dashed border-[rgba(16,36,60,0.08)];
+  font-family: 'Clash Display', sans-serif;
+}
+
+.edgeSpacePlaceholder {
+  @apply flex-[0_0_50px] pointer-events-none;
+}
+
+.noScrollbar {
+  scrollbar-width: none !important;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  display: none !important;
+}
