@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ProductType } from '@/app/solutions/constants'
 import styles from './HorizontalSmoothTrack.module.css'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 
 interface TrackProps {
   title: string
@@ -175,7 +176,7 @@ export default function HorizontalSmoothTrack({
       </div>
 
       <div className={styles.carouselWrapper}>
-        <button 
+        <button
           className={`${styles.arrowBtn} ${styles.leftArrow} ${showLeftArrow ? styles.arrowVisible : ''}`}
           onClick={() => handleArrowScroll('left')}
           aria-label="Scroll left"
@@ -183,7 +184,7 @@ export default function HorizontalSmoothTrack({
           ←
         </button>
 
-        <button 
+        <button
           className={`${styles.arrowBtn} ${styles.rightArrow} ${showRightArrow ? styles.arrowVisible : ''}`}
           onClick={() => handleArrowScroll('right')}
           aria-label="Scroll right"
@@ -214,9 +215,17 @@ export default function HorizontalSmoothTrack({
                   <p className={styles.cardDesc}>{product.desc}</p>
                 </div>
 
-                <div className={styles.cardFooterLink}>
+                {/* <div className={styles.cardFooterLink}>
                   Clinical Monograph →
-                </div>
+                </div> */}
+                <button className={styles.cardFooterButton}>
+                  <span>Clinical Monograph</span>
+
+                  <div className={styles.iconWrapper}>
+                    <ArrowRight className={styles.arrowRight} />
+                    <ArrowUpRight className={styles.arrowUpRight} />
+                  </div>
+                </button>
               </div>
             </div>
           ))}

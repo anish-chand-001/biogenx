@@ -8,7 +8,7 @@
 .viewportSection {
   @apply h-screen flex flex-col justify-center snap-start relative px-[6%] md:px-[8%] overflow-hidden pt-[110px] md:pt-[130px];
   font-family: 'Sentient', serif;
-  padding-top: 180px;
+  padding-top: 120px;
 }
 
 /* Floating Navigation Indicator Track (Desktop Only) */

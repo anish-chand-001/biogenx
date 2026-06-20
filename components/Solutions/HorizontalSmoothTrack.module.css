@@ -3,7 +3,7 @@
 }
 
 .headerBlock {
-  @apply flex items-end justify-between mb-6 md:mb-10 text-left w-full;
+  @apply flex items-end justify-between mb-2 md:mb-4 text-left w-full;
 }
 
 .titleArea {
@@ -15,7 +15,7 @@
 }
 
 .titleText {
-  @apply text-[clamp(2.3rem,4.5vw,3.5rem)] text-[#10243C] font-normal leading-none;
+  @apply text-[clamp(2rem,3.8vw,3rem)] text-[#10243C] font-normal leading-none;
 }
 
 /* New Relative Layout Frame for Flawless Arrow Floating */
@@ -56,43 +56,170 @@
 }
 
 .swipingTrack {
-  @apply flex gap-8 overflow-x-auto select-none cursor-grab pb-8 snap-x snap-mandatory md:snap-none w-full;
+  @apply flex gap-5 md:gap-8 overflow-x-auto select-none cursor-grab pb-8 snap-x snap-mandatory md:snap-none w-full;
 }
-
 .trackGrabbing {
   @apply cursor-grabbing !important;
 }
 
 .productCard {
-  @apply flex-[0_0_310px] sm:flex-[0_0_280px] bg-[#FAF7F2] rounded-[24px] overflow-hidden;
-  @apply border border-[rgba(16,36,60,0.03)] snap-start transition-all duration-300 transform;
-  @apply hover:-translate-y-1 hover:shadow-xl;
-  box-shadow: 0 15px 40px rgba(16, 36, 60, 0.02);
+  @apply flex-[0_0_280px]
+  sm:flex-[0_0_340px]
+  lg:flex-[0_0_420px]
+  bg-[#FAF7F2]
+  rounded-[24px]
+  overflow-hidden;
+
+  @apply border border-[rgba(16,36,60,0.06)]
+  snap-start
+  transition-all
+  duration-500
+  transform;
+
+  box-shadow:
+    0 4px 12px rgba(16,36,60,0.06),
+    0 18px 40px rgba(16,36,60,0.10);
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 10px 25px rgba(16,36,60,0.10),
+    0 30px 60px rgba(16,36,60,0.16);
 }
 
 /* Preserved compact design height configurations */
 .imageWrapper {
-  @apply h-[260px] bg-[rgba(183,155,111,0.06)] border-b border-[rgba(183,155,111,0.1)] flex items-center justify-center relative;
+  @apply h-[210px]
+  sm:h-[230px]
+  lg:h-[240px]
+  bg-[rgba(183,155,111,0.06)]
+  border-b
+  border-[rgba(183,155,111,0.1)]
+  flex
+  items-center
+  justify-center
+  relative;
 }
-
 .contentBlock {
-  @apply p-6 flex flex-col justify-between h-[210px];
+  /* @apply p-5 md:p-6; */
+  padding: 28px 24px 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 200px;
 }
 
 .cardTitle {
-  @apply text-[#10243C] text-lg font-medium mb-2.5;
+  color: #10243C;
   font-family: 'Bebas Neue', sans-serif;
+
+  font-size: 1.45rem;
+  line-height: 1;
+
+  margin-bottom: 14px;
+
+  letter-spacing: 0.3px;
 }
 
 .cardDesc {
-  @apply text-[#6e6e6e] text-[0.85rem] leading-relaxed line-clamp-4;
+  color: #667085;
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+
   font-family: 'Nunito', sans-serif;
+
+  line-clamp: 3;
 }
 
-.cardFooterLink {
-  @apply flex items-center text-[0.8rem] font-semibold text-[#B79B6F] tracking-wider uppercase pt-4;
-  @apply border-t border-dashed border-[rgba(16,36,60,0.08)];
+.cardFooterButton {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 8px;
+  margin-top: auto;
+
+  width: fit-content;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #ea7b79;
+  color: #ffffff;
+
   font-family: 'Clash Display', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+
+  box-shadow:
+    0 8px 18px rgba(234, 123, 121, 0.25),
+    0 2px 6px rgba(234, 123, 121, 0.15);
+}
+.cardFooterButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(234, 123, 121, 0.35),
+    0 4px 12px rgba(234, 123, 121, 0.2);
+}
+
+.iconWrapper {
+  position: relative;
+
+  width: 16px;
+  height: 16px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.arrowRight,
+.arrowUpRight {
+  position: absolute;
+  inset: 0;
+
+  width: 16px;
+  height: 16px;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.arrowRight {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.arrowUpRight {
+  opacity: 0;
+  transform: translate(-8px, 8px);
+}  
+
+.cardFooterButton:hover .arrowRight {
+  opacity: 0;
+  transform: translate(8px, -8px);
+}
+
+.cardFooterButton:hover .arrowUpRight {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .edgeSpacePlaceholder {
