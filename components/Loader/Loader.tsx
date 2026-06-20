@@ -53,7 +53,7 @@ export default function Loader({
         }}
       >
         <img
-          src="/logo/biogenx.png"
+          src="/logo/logo-biogenx.png"
           alt="BioGenX"
           className="h-auto w-[80vw] max-w-[1200px] min-w-[250px] object-contain"
           draggable={false}
