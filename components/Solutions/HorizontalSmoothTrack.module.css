@@ -107,9 +107,9 @@
   padding: 28px 24px 22px;
 
   display: flex;
+  flex: 1;
   flex-direction: column;
-
-  height: 200px;
+  min-height: 240px;
 }
 
 .cardTitle {
@@ -126,13 +126,14 @@
 
 .cardDesc {
   color: #667085;
-
   font-size: 0.95rem;
   line-height: 1.8;
-
   font-family: 'Nunito', sans-serif;
 
-  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .cardFooterButton {
