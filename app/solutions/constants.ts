@@ -49,7 +49,7 @@ export const CHILDREN_PRODUCTS: ProductType[] = [
     id: 1, 
     title: "Bonenano-60K(Pediatric)", 
     desc: "Advanced cholecalciferol nanotechnology liquid shots with over 90% absorption to boost baseline immunity and bone health.", 
-    img: "/oursolutions/baby/Bonenano-60K.png" 
+    img: "/oursolutions/baby/bonenano-60k.png" 
   },
   { 
     id: 2, 
