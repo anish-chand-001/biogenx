@@ -8,98 +8,86 @@ export interface ProductType {
 export const WOMEN_PRODUCTS: ProductType[] = [
   { 
     id: 1, 
-    title: "Prenatal Multi-Vitamin", 
-    desc: "Comprehensive micronutrient and folate support optimized for maternal tissue growth and fetal neural development.", 
-    img: "/oursolutions/mom/divadro2.png" 
+    title: "Divadro", 
+    desc: "Premium 99.9% pure dydrogesterone tablets for recurrent pregnancy loss, threatened abortion, and luteal phase deficiency management.", 
+    img: "/oursolutions/mom/divadro.png" 
   },
   { 
     id: 2, 
-    title: "Postnatal Recovery Complex", 
-    desc: "Restorative bio-available mineral blend engineered to support postpartum tissue healing and lactation demand.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Folbiogen", 
+    desc: "Advanced L-methylfolate calcium tablets engineered to enhance oocyte quality, optimize conception, and prevent neural tube defects", 
+    img: "/oursolutions/mom/folbiogen.png" 
   },
   { 
     id: 3, 
-    title: "Hormonal Balance Elixir", 
-    desc: "Advanced botanical extract designed to stabilize endocrine signaling and support cycle regularity.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Mavitol", 
+    desc: "Sustained-release metformin and myo-inositol tablets configured to control insulin resistance and regulate ovarian function in PCOS", 
+    img: "/oursolutions/mom/mavitol.png" 
   },
   { 
     id: 4, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "ArgiFaith", 
+    desc: "High-absorption L-arginine granules to improve amniotic fluid index, optimize placental circulation, and mitigate pre-eclampsia risks.", 
+    img: "/oursolutions/mom/argifaith.png" 
   },
    { 
     id: 5, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Gendox", 
+    desc: "First-line doxylamine succinate, pyridoxine, and folic acid tablets providing rapid symptom relief for severe morning sickness.", 
+    img: "/oursolutions/mom/gendox.png" 
   },
    { 
     id: 6, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
-  },
-   { 
-    id: 7, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
-  },
-   { 
-    id: 8, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
-  },
-   { 
-    id: 9, 
-    title: "Maternal Calcium Support", 
-    desc: "High-absorption calcium chelate complex to maintain maternal bone density throughout gestation.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Bonenano-60K(Maternal)", 
+    desc: "Bioavailable vitamin D3 nanoshots designed to combat maternal hypovitaminosis, reduce insulin resistance, and prevent gestational diabetes.", 
+    img: "/oursolutions/mom/bonenano-60k.png" 
   }
 ]
 
 export const CHILDREN_PRODUCTS: ProductType[] = [
   { 
     id: 1, 
-    title: "Infant Vitamin D3 Drops", 
-    desc: "Pure, allergen-free cholecalciferol formulation supporting early bone mineralization and innate immune defenses.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Bonenano-60K(Pediatric)", 
+    desc: "Advanced cholecalciferol nanotechnology liquid shots with over 90% absorption to boost baseline immunity and bone health.", 
+    img: "/oursolutions/baby/Bonenano-60K.png" 
   },
   { 
     id: 2, 
-    title: "Kids Complete Omega-3", 
-    desc: "Sustainably sourced, high-DHA marine lipid concentrate optimized for neurological growth and cognitive mapping.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Bonenano-drops", 
+    desc: "Infant cholecalciferol drops delivering 800 IU/ml to correct vitamin D deficiency and provide essential rickets prevention.", 
+    img: "/oursolutions/baby/bonenano-drops.png" 
   },
   { 
     id: 3, 
-    title: "Toddler Probiotic Powder", 
-    desc: "Clinically audited multi-strain symbiotic blend engineered to reinforce infant gut mucosal barrier integrity.", 
-    img: "/oursolutions/mom/img1.png" 
+    title: "Ragonist", 
+    desc: "Professional pediatric ranitidine syrup offering fast onset and sustainable duration of action against GERD and gastritis.", 
+    img: "/oursolutions/baby/ragonist.png" 
+  },
+  { 
+    id: 4, 
+    title: "Probiolac-Z", 
+    desc: "Premium sachet combining nine probiotic strains, prebiotic FOS, and zinc to renormalize gut flora and treat diarrhea.", 
+    img: "/oursolutions/baby/probiolac-z.png" 
   }
 ]
 
-export const GENERAL_PRODUCTS: ProductType[] = [
-  { 
-    id: 1, 
-    title: "Family Immunity Shield", 
-    desc: "High-potency antioxidant and zinc complex formulated for multi-generational immune system optimization.", 
-    img: "/oursolutions/mom/img1.png" 
-  },
-  { 
-    id: 2, 
-    title: "Advanced Sleep Magnesium", 
-    desc: "Pure elemental magnesium glycinate to support neuromuscular relaxation and deep sleep cycles.", 
-    img: "/oursolutions/mom/img1.png" 
-  },
-  { 
-    id: 3, 
-    title: "Daily Marine Collagen", 
-    desc: "Hydrolyzed Type I & III collagen peptides engineered to support cellular repair and connective tissue elasticity.", 
-    img: "/oursolutions/mom/img1.png" 
-  }
-]
+// export const GENERAL_PRODUCTS: ProductType[] = [
+//   { 
+//     id: 1, 
+//     title: "Family Immunity Shield", 
+//     desc: "High-potency antioxidant and zinc complex formulated for multi-generational immune system optimization.", 
+//     img: "/oursolutions/mom/img1.png" 
+//   },
+//   { 
+//     id: 2, 
+//     title: "Advanced Sleep Magnesium", 
+//     desc: "Pure elemental magnesium glycinate to support neuromuscular relaxation and deep sleep cycles.", 
+//     img: "/oursolutions/mom/img1.png" 
+//   },
+//   { 
+//     id: 3, 
+//     title: "Daily Marine Collagen", 
+//     desc: "Hydrolyzed Type I & III collagen peptides engineered to support cellular repair and connective tissue elasticity.", 
+//     img: "/oursolutions/mom/img1.png" 
+//   }
+// ]

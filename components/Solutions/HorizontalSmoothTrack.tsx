@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation' // 1. Import the router hook
 import { ProductType } from '@/app/solutions/constants'
 import styles from './HorizontalSmoothTrack.module.css'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
@@ -18,6 +19,7 @@ export default function HorizontalSmoothTrack({
   products,
 }: TrackProps) {
   const trackRef = useRef<HTMLDivElement>(null)
+  const router = useRouter() 
   const [showLeftArrow, setShowLeftArrow] = useState(false)
   const [showRightArrow, setShowRightArrow] = useState(true)
 
@@ -63,7 +65,6 @@ export default function HorizontalSmoothTrack({
       }
     }
 
-    // --- MOUSE MAPPING EVENT INTERFACES ---
     const handleMouseDown = (e: MouseEvent) => {
       isDown = true
       track.classList.add(styles.trackGrabbing)
@@ -82,7 +83,7 @@ export default function HorizontalSmoothTrack({
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDown) return
-      e.preventDefault() // Safe for mouse dragging only
+      e.preventDefault()
       const x = e.pageX - track.offsetLeft
       const walk = (x - startX) * 1.5
       track.scrollLeft = scrollLeft - walk
@@ -92,7 +93,6 @@ export default function HorizontalSmoothTrack({
       lastX = e.pageX
     }
 
-    // --- TOUCH/MOBILE MAPPING INTERFACES (Preserves full native body scroll) ---
     const handleTouchStart = (e: TouchEvent) => {
       isDown = true
       isFirstMove = true
@@ -111,21 +111,18 @@ export default function HorizontalSmoothTrack({
       const currentX = e.touches[0].pageX - track.offsetLeft
       const currentY = e.touches[0].pageY - track.offsetTop
 
-      // Determine initial user gesture intent (Horizontal vs Vertical)
       if (isFirstMove) {
         isFirstMove = false
         const diffX = Math.abs(currentX - startX)
         const diffY = Math.abs(currentY - startY)
         if (diffY > diffX) {
           isScrollingVertical = true
-          isDown = false // Detach track drag immediately
+          isDown = false
           return
         }
       }
 
       if (isScrollingVertical) return
-
-      // Stop native page shifting only if the intent is strictly a horizontal slider gesture
       if (e.cancelable) e.preventDefault()
 
       const walk = (currentX - startX) * 1.5
@@ -141,7 +138,6 @@ export default function HorizontalSmoothTrack({
       updateMomentum()
     }
 
-    // Attach Event Handlers
     track.addEventListener('mousedown', handleMouseDown)
     track.addEventListener('mouseleave', handleMouseLeaveOrUp)
     track.addEventListener('mouseup', handleMouseLeaveOrUp)
@@ -215,11 +211,12 @@ export default function HorizontalSmoothTrack({
                   <p className={styles.cardDesc}>{product.desc}</p>
                 </div>
 
-                {/* <div className={styles.cardFooterLink}>
-                  Clinical Monograph →
-                </div> */}
-                <button className={styles.cardFooterButton}>
-                  <span>Clinical Monograph</span>
+                {/* 3. Updated Button with dynamic query parameter route navigation */}
+                <button 
+                  className={styles.cardFooterButton}
+                  onClick={() => router.push(`/solutions/detailed-product-monograph?id=${product.id}`)}
+                >
+                  <span>Clinical specifications</span>
 
                   <div className={styles.iconWrapper}>
                     <ArrowRight className={styles.arrowRight} />

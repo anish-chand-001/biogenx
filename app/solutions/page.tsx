@@ -2,7 +2,7 @@
 
   import React, { useEffect, useState } from 'react'
   import HorizontalSmoothTrack from '@/components/Solutions/HorizontalSmoothTrack'
-  import { WOMEN_PRODUCTS, CHILDREN_PRODUCTS, GENERAL_PRODUCTS } from './constants'
+  import { WOMEN_PRODUCTS, CHILDREN_PRODUCTS } from './constants'
   import styles from './OurSolutions.module.css'
 
   export default function OurSolutionsPage() {
@@ -51,11 +51,11 @@
             className={`${styles.navDot} ${activeSection === 'children' ? styles.navDotActive : ''}`} 
             title="Pediatric Formulations"
           ></a>
-          <a 
+          {/* <a 
             href="#general" 
             className={`${styles.navDot} ${activeSection === 'general' ? styles.navDotActive : ''}`} 
             title="Clinical Essentials"
-          ></a>
+          ></a> */}
         </div>
 
         {/* Section 1: Women */}
@@ -77,13 +77,13 @@
         </section>
 
         {/* Section 3: General Care */}
-        <section id="general" className={styles.viewportSection}>
+        {/* <section id="general" className={styles.viewportSection}>
           <HorizontalSmoothTrack 
             title="General Care" 
             tagline="03 // Clinical Essentials" 
             products={GENERAL_PRODUCTS} 
           />
-        </section>
+        </section> */}
 
       </div>
     )
