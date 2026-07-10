@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Suspense, useState, useEffect, useRef } from 'react'
+import React, { Suspense, useEffect, useRef } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Download } from 'lucide-react'
@@ -11,10 +11,8 @@ function MonographContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   
-  // Get the target ID safely from the client-side URL query parameter
   const targetId = parseInt(searchParams.get('id') || '1', 10)
   
-  // FIXED: Explicitly typed as HTMLElement to match the <article> tag assignment
   const cardRefs = useRef<{ [key: number]: HTMLElement | null }>({})
 
   useEffect(() => {
@@ -123,17 +121,6 @@ function MonographContent() {
               </div>
             )}
           </div>
-
-          <footer className={styles.cardActionArea}>
-            <a 
-              href={product.pdfUrl || `/oursolutions/Biogenx.pdf`} 
-              download 
-              className={styles.actionBtnPrimary}
-            >
-              <Download size={16} />
-              <span>Download Core PDF Asset</span>
-            </a>
-          </footer>
         </div>
       </article>
     )

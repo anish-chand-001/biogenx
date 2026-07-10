@@ -15,7 +15,6 @@ export interface MonographType {
   mechanismOfAction?: string; 
   keyBenefits?: string[];     
   researchData?: { label: string; value: string }[];
-  pdfUrl?: string;            
 }
 
 export const MONOGRAPH_RECORDS: MonographType[] = [
@@ -34,21 +33,12 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       "Dysmenorrhea",
       "Pre-Menstrual syndrome"
     ],
-    researchData: [
-      { label: "Purity Engine", value: "99.9% Purity" },
-      { label: "Dissolution Rate", value: "30 Min. Dissolution" },
-      { label: "Bioavailability", value: "5.6 Times more Bioavailable than NMP" }
-    ],
     keyBenefits: [
       "Rapid onset of action.",
       "Recommended by FOGSI* and EPC* guidelines.",
       "Low dosage requirement with 1.5 times better affinity than oral MCP.",
       "Significantly improves pregnancy outcomes in women with a history of threatened miscarriage."
-    ],
-    compositionTable: [
-      { ingredient: "Dydrogesterone", strength: "10 mg" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 2,
@@ -67,13 +57,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
     keyBenefits: [
       "Provides the right supplement profiling during pregnancy for better outcomes.",
       "Supports neural and operational cellular division from preconception onward."
-    ],
-    compositionTable: [
-      { ingredient: "L-Methylfolate Calcium", strength: "1 mg" },
-      { ingredient: "Methylcobalamin", strength: "1500 mcg" },
-      { ingredient: "Pyridoxal-5-Phosphate", strength: "0.5 mg" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 3,
@@ -93,12 +77,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       "Regulates Ovarian Function metrics seamlessly.",
       "Assists Conception pathways in PCOS profiles.",
       "Right and Trusted Choice for PCOS management."
-    ],
-    compositionTable: [
-      { ingredient: "Metformin Hydrochloride (Sustained Release)", strength: "500 mg" },
-      { ingredient: "Myo-Inositol", strength: "600 mg" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 4,
@@ -119,11 +98,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       "Significant Improvement in Amniotic Fluid index parameters.",
       "Increases birth weight and placental circulation.",
       "Reduces the chances of early miscarriages."
-    ],
-    compositionTable: [
-      { ingredient: "L-Arginine", strength: "3 gm (in 5 gm sachet)" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 5,
@@ -137,19 +112,12 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       "Morning Sickness",
       "Hyperemesis gravidarum"
     ],
-    mechanismOfAction: "Doxylamine Succinate + Pyridoxine Hydrochloride acts as the first-line pharmacotherapy for managing pregnancy-induced emesis, supplemented with Folic Acid to secure embryonic spinal formation.",
     keyBenefits: [
       "First line treatment for nausea and vomiting during pregnancy with a proven clinical history.",
       "Shows rapid improvement in clinical symptoms of morning distress.",
       "Shows favorable safety profile without any reports of causing fetal anomalies.",
       "Folic Acid explicitly reduces the risk of neural tube defects."
-    ],
-    compositionTable: [
-      { ingredient: "Doxylamine Succinate", strength: "20 mg" },
-      { ingredient: "Pyridoxine Hydrochloride", strength: "20 mg" },
-      { ingredient: "Folic Acid", strength: "5 mg" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 6,
@@ -164,23 +132,12 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       "Menopause vitamin management",
       "PCOS-linked metabolic vulnerabilities"
     ],
-    researchData: [
-      { label: "Deficiency Statistic", value: "96.3% of pregnant Indian women present hypovitaminosis D" },
-      { label: "Pre-eclampsia Risk Reduction", value: "40% elevated risk with deficit states" },
-      { label: "Preterm Birth Association", value: "8.6% variation risk reduction" },
-      { label: "LBW Infant Risk Avoidance", value: "12-fold safety optimization margin" },
-      { label: "GDM Vulnerability Safety", value: "2.66-Fold reduction profile" }
-    ],
     keyBenefits: [
       "Directly acts on muscle fat cells & reduces insulin resistance.",
       "Regulates calcium homeostasis & helps in oocyte maturation.",
       "Supports better pregnancy outcomes & healthier foetal development.",
       "Minimizes the chances of Vitamin D Deficiency and prevents Gestational Diabetes (GDM)."
-    ],
-    compositionTable: [
-      { ingredient: "Cholecalciferol (Vitamin D3)", strength: "60,000 IU" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 7,
@@ -208,8 +165,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
     ],
     compositionTable: [
       { ingredient: "Cholecalciferol (Vitamin D3)", strength: "60,000 IU" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 8,
@@ -236,8 +192,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
     ],
     compositionTable: [
       { ingredient: "Cholecalciferol (Vitamin D3)", strength: "800 IU per ml" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 9,
@@ -264,8 +219,7 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
     ],
     compositionTable: [
       { ingredient: "Ranitidine", strength: "75 mg per 5 ml" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   },
   {
     id: 10,
@@ -291,7 +245,6 @@ export const MONOGRAPH_RECORDS: MonographType[] = [
       { ingredient: "B. breve, B. longum, B. infantis, L. acidophilus, L. plantarum, L. casei, L. rhamnosus, Streptococcus thermophilus, S. Boulardii", strength: "2.5 Billion CFUs (Total)" },
       { ingredient: "Fructooligosaccharides (FOS)", strength: "100 mg" },
       { ingredient: "Zinc", strength: "10 mg" }
-    ],
-    pdfUrl: "/oursolutions/Biogenx.pdf"
+    ]
   }
 ];
