@@ -8,11 +8,18 @@ import Image from 'next/image'
 
 export default function AboutUsPage() {
   // Apple-grade calibrated physics config
-  const springTransition = { type: 'spring', stiffness: 90, damping: 20 }
+  const springTransition = { type: 'spring', stiffness: 90, damping: 20 } as const;
 
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.16, 1, 0.3, 1] as const 
+      } 
+    }
   }
 
   const staggerContainer = {
@@ -35,7 +42,7 @@ export default function AboutUsPage() {
               <motion.h1 
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
                 className={styles.heroTitle}
               >
                 Driven by Science. <br />
@@ -59,7 +66,7 @@ export default function AboutUsPage() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] as const }}
               className={styles.heroVisualCanvas}
             >
               {/* Added z-index to keep the gradient overlay on top of the image */}
