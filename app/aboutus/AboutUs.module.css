@@ -2,8 +2,8 @@
 .pageViewport {
   width: 100%;
   min-height: 100vh;
-  background-color: #f3efe6; /* Calibrated Warm Ivory Base */
-  color: #10243c; /* Clinical Deep Navy Slate */
+  background-color: #f3efe6; 
+  color: #10243c; 
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
 }
@@ -17,21 +17,35 @@
   padding-right: 2.5rem;
 }
 
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 .overlineTag {
   font-family: 'Satoshi', sans-serif;
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #e28782; /* Muted Accent Highlight Rose */
+  color: #e28782;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced slightly for mobile */
 }
 
 /* SECTION 1: HERO CONTAINER STYLES */
 .heroSection {
   padding-top: 8rem;
   padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .heroMainGrid {
@@ -50,18 +64,13 @@
 
 .heroTitle {
   font-family: 'Satoshi', sans-serif;
-  font-size: 4rem;
+  /* Fluid typography: scales from 2.5rem on small phones to 4rem on desktop */
+  font-size: clamp(2.5rem, 5vw, 4rem); 
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: #10243c;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 640px) {
-  .heroTitle {
-    font-size: 2.75rem;
-  }
+  margin-bottom: 1.5rem;
 }
 
 .accentTextText {
@@ -70,7 +79,8 @@
 }
 
 .heroDescription {
-  font-size: 1.25rem;
+  /* Fluid typography: 1.05rem to 1.25rem */
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.6;
   color: #3d4f66;
   font-weight: 400;
@@ -81,8 +91,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
-  /* height: 480px; */
-  background-color: #e9e3d5; /* Muted base geometric fill container */
+  background-color: #e9e3d5;
   border-radius: 28px;
   overflow: hidden;
   display: flex;
@@ -93,20 +102,18 @@
   box-shadow: 0 20px 40px -15px rgba(16, 36, 60, 0.04);
 }
 
+@media (max-width: 768px) {
+  .heroVisualCanvas {
+    aspect-ratio: 16/10; /* Make it slightly shorter on mobile to save vertical space */
+    border-radius: 20px;
+  }
+}
+
 .gradientScrimOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(226, 135, 130, 0.05) 0%, rgba(16, 36, 60, 0.02) 100%);
   pointer-events: none;
-}
-
-.placeholderImgLabel {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #7c8ba1;
-  letter-spacing: 0.02em;
-  text-align: center;
-  padding: 2rem;
 }
 
 /* SECTION 2: CORE APPROACH MANIFESTO LAYOUT */
@@ -115,6 +122,13 @@
   padding-bottom: 6rem;
   border-top: 1px solid rgba(16, 36, 60, 0.08);
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .manifestoSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .manifestoSplitLayout {
@@ -132,31 +146,25 @@
 
 .splitSectionHeading {
   font-family: 'Satoshi', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #10243c;
 }
 
 .manifestoBodyParagraph {
-  font-size: 1.5rem;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
   line-height: 1.5;
   font-weight: 400;
   color: #10243c;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   letter-spacing: -0.01em;
-}
-
-@media (max-width: 640px) {
-  .manifestoBodyParagraph {
-    font-size: 1.25rem;
-  }
 }
 
 .miniMetricsMatrix {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap slightly for better mobile wrapping */
 }
 
 .metricItemBox {
@@ -172,11 +180,27 @@
   border: 1px solid rgba(16, 36, 60, 0.04);
 }
 
+@media (max-width: 480px) {
+  .metricItemBox {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+    width: 100%; /* Stretch across screen on tiny phones */
+    justify-content: center;
+  }
+}
+
 /* SECTION 3: BENTO CARD PANELS */
 .bentoSection {
   padding-top: 7rem;
   padding-bottom: 8rem;
   border-top: 1px solid rgba(16, 36, 60, 0.08);
+}
+
+@media (max-width: 768px) {
+  .bentoSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 .bentoDoubleCanvasGrid {
@@ -188,7 +212,7 @@
 @media (max-width: 1024px) {
   .bentoDoubleCanvasGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
@@ -204,9 +228,16 @@
   flex-direction: column;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .bentoWrapperCard {
     padding: 2rem;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bentoWrapperCard {
+    padding: 1.75rem 1.5rem; /* Critical: prevent squishing text against edges */
   }
 }
 
@@ -219,21 +250,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .bentoCardHeading {
   font-family: 'Satoshi', sans-serif;
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #10243c;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   z-index: 2;
 }
 
 .bentoCardBodyCopy {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.65;
   color: #4a5d73;
   font-weight: 400;
@@ -244,9 +275,9 @@
   position: absolute;
   right: -1rem;
   bottom: -1.5rem;
-  font-size: 7rem;
+  font-size: clamp(4rem, 10vw, 7rem); /* Scale down the watermark so it doesn't break mobile boundaries */
   font-weight: 900;
-  color: rgba(16, 36, 60, 0.015);
+  color: rgba(16, 36, 60, 0.025);
   letter-spacing: -0.03em;
   user-select: none;
   pointer-events: none;
@@ -257,6 +288,13 @@
   padding-top: 3rem;
   padding-bottom: 4rem;
   border-top: 1px solid rgba(16, 36, 60, 0.06);
+}
+
+@media (max-width: 768px) {
+  .aboutPageFooterNote {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
 }
 
 .footerDisclaimerCopy {

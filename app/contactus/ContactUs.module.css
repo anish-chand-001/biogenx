@@ -17,6 +17,14 @@
   padding-right: 2.5rem;
 }
 
+/* Mobile Section Container Optimization */
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 .overlineTag {
   display: block;
   font-size: 0.75rem;
@@ -41,15 +49,28 @@
   color: #10243c;
 }
 
+.accentTextText {
+  color: #e28782;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
+  .heroSection {
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
+  }
   .heroTitle {
     font-size: 3rem;
   }
 }
 
-.accentTextText {
-  color: #e28782;
-  font-weight: 600;
+@media (max-width: 480px) {
+  .heroSection {
+    padding-top: 5rem;
+  }
+  .heroTitle {
+    font-size: 2.5rem;
+  }
 }
 
 /* CONTACT INFO GRID */
@@ -67,7 +88,13 @@
 @media (max-width: 1024px) {
   .contactGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced gap for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .contactInterfaceSection {
+    padding-bottom: 5rem;
   }
 }
 
@@ -75,13 +102,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem; /* Slightly reduced gap */
   background-color: #ffffff;
   padding: 3.5rem 3rem;
   border-radius: 32px;
   border: 1px solid rgba(16, 36, 60, 0.04);
   box-shadow: 0 20px 50px -15px rgba(16, 36, 60, 0.04);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .vectorCard {
+    padding: 2rem 1.5rem; /* Critical for mobile to prevent squished text */
+    border-radius: 24px;
+    align-items: center; /* Center aligning on mobile often looks cleaner */
+    text-align: center;
+  }
 }
 
 .vectorCard:hover {
@@ -113,13 +149,16 @@
   line-height: 1.6;
   color: #4a5d73;
   font-weight: 400;
+  /* Crucial for long emails/URLs on small mobile screens */
+  word-break: break-word;
+  overflow-wrap: break-word; 
 }
 
 /* CTA FOOTER BANNER */
 .ctaFooterSection {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #10243c; /* Inverted Polarity for impact */
+  background-color: #10243c;
   color: #f3efe6;
 }
 
@@ -140,12 +179,6 @@
   margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .ctaTitle {
-    font-size: 2.5rem;
-  }
-}
-
 .ctaDescription {
   font-size: 1.25rem;
   line-height: 1.6;
@@ -153,6 +186,26 @@
   font-weight: 400;
   margin-bottom: 3rem;
   max-width: 680px;
+}
+
+@media (max-width: 768px) {
+  .ctaFooterSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+  .ctaDescription {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaTitle {
+    font-size: 2rem;
+  }
 }
 
 .ctaTextLink {
@@ -163,6 +216,7 @@
   font-weight: 600;
   color: #e28782;
   text-decoration: none;
+  padding: 0.5rem 1rem; /* Better touch target for mobile */
 }
 
 .ctaTextLink:hover {

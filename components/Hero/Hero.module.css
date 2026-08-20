@@ -1,25 +1,23 @@
 .hero {
   min-height: 100vh;
   background: #f2efe7;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 80px 8% 40px;
   gap: 4rem;
   overflow: hidden;
 }
 
 .imageContainer {
-  flex: 1.2; /* Keeps the image area larger than the text area */
+  flex: 1.2;
   position: relative;
-  height: 550px; /* Gives a solid height for 'fill' layout to expand into */
+  height: 550px;
   width: 100%;
 }
 
 .heroImage {
-  object-fit: contain; /* Ensures the full image is visible without weird cropping */
+  object-fit: contain;
   object-position: center;
 }
 
@@ -68,100 +66,87 @@
 .content button:hover {
   transform: translateY(-3px);
   background: #23456b;
+  box-shadow: 0 10px 20px rgba(16, 36, 60, 0.15);
 }
 
-/* ---------- Tablet & Mobile Breakpoints ---------- */
-
+/* ---------- Tablet Breakpoint ---------- */
 @media (max-width: 1024px) {
   .hero {
     gap: 2rem;
     padding: 100px 5% 40px;
   }
-
   .imageContainer {
     height: 500px;
   }
 }
-
+/* ---------- Mobile Breakpoint (Background Overlay Layout) ---------- */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: row; /* Keeps image on left, content on right */
-    gap: 1.5rem;
-    padding: 80px 20px 40px;
-    min-height: auto; /* Prevents stretching too long on mobile */
+    /* Center everything vertically and horizontally */
+    flex-direction: column; 
+    justify-content: center;
+    padding: 80px 5% 40px;
+    min-height: 100vh;
+    height: auto;
+    position: relative; /* Crucial: traps the absolute image container */
   }
 
+  /* Turns the image container into a full-screen background */
   .imageContainer {
-    flex: 1.1;
-    height: 380px; /* Adjusts image frame for mobile viewports */
-  }
-
-  .content {
-    flex: 1;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .content h1 {
-    font-size: clamp(1.6rem, 4vw, 2.5rem);
-  }
-
-  .content p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-top: 0.8rem;
-  }
-
-  .content button {
-    margin-top: 1rem;
-    padding: 12px 20px;
-    font-size: 0.85rem;
-  }
-}
-
-
-
-@media (max-width: 480px) {
-  .hero {
-    gap: 0.8rem;                  /* Tighten the gap so text has room */
-    padding: 50px 10px 20px;       /* Reduce padding to maximize viewport space */
-    align-items: center;          /* Center items vertically */
-    height: 90vh;                 /* Force the hero section to take up most of the screen height */
-  }
-
-  .imageContainer {
-    flex: 2.5;             
-   position: relative; /* REQUIRED for 'fill' to work */
-  width: 100%;       /* Or a flex basis */
-  height: 300px;               /* Lets the container fill the height of the hero section */
-           /* Prevents it from becoming awkwardly tall */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex: none;
+    z-index: 0;
+    opacity: 0.15; /* The professional low-opacity fade */
+    pointer-events: none; /* Prevents the image from interfering with taps */
   }
 
   .heroImage {
-    object-fit: cover;            /* Cuts off empty background space and zooms into the mother/baby */
-    object-position: left center; /* Keeps the focus shifted towards the subjects */
+    object-fit: cover; /* Ensures the image fills the whole screen edge-to-edge */
+    object-position: center 20%; /* Shifts the image slightly to keep faces visible */
   }
 
+  /* Pulls the text forward and centers it */
   .content {
-    flex: 1;                      /* Keeps text contained to its side */
-    z-index: 2;                   /* Ensures text stays safely on top if things overlap slightly */
+    position: relative;
+    z-index: 1; /* Puts text ABOVE the background image */
+    align-items: center; 
+    text-align: center;  
+    width: 100%;
+  }
+
+  .content h1 br {
+    display: none; 
+  }
+
+  .content h1 span {
+    display: block; 
+    margin-bottom: 0.5rem;
   }
 
   .content h1 {
-    font-size: 1.6rem;            /* Scale down slightly so long words don't break awkwardly on tiny screens */
+    font-size: clamp(2.2rem, 8vw, 3rem);
     line-height: 1.1;
   }
 
   .content p {
-    font-size: 0.75rem;
-    line-height: 1.3;
-    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    max-width: 100%; 
+    padding: 0 10px; 
+    font-weight: 500; /* Slightly bolder to stand out over the image */
   }
 
   .content button {
-    margin-top: 0.8rem;
-    padding: 10px 14px;
-    font-size: 0.75rem;
-    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 16px 28px;
+    font-size: 1rem;
+    width: 100%; 
+    max-width: 280px;
+    box-shadow: 0 8px 20px rgba(16, 36, 60, 0.1); /* Adds a nice shadow to lift the button */
   }
 }

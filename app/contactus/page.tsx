@@ -1,23 +1,31 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import styles from './ContactUs.module.css'
 
 export default function ContactUsPage() {
-  const staggerContainer = {
+  // Explicitly typing variants resolves strict TypeScript errors
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+    visible: { 
+      opacity: 1, 
+      transition: { staggerChildren: 0.15 } 
+    }
   }
 
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1]as const   }}
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+    }
   }
 
   return (
-    <div className={styles.pageViewport}>
+    <main className={styles.pageViewport}>
       {/* HERO SECTION */}
       <section className={styles.heroSection}>
         <div className={styles.sectionContainer}>
@@ -104,13 +112,14 @@ export default function ContactUsPage() {
               href="#top"
               whileHover={{ x: 5 }}
               className={styles.ctaTextLink}
+              aria-label="Partner with us"
             >
-              {/* <span>Partner with us</span> */}
-              {/* <ArrowRight size={18} /> */}
+              <span>Partner with us</span>
+              <ArrowRight size={18} />
             </motion.a>
           </motion.div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

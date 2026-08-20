@@ -1,4 +1,6 @@
 
+
+
 import Image from 'next/image'
 import styles from './Hero.module.css'
 import Link from 'next/link'
@@ -11,8 +13,9 @@ export default function Hero() {
           src="/hero/biogenx-hero.png"
           alt="Mother and Baby"
           fill
-          priority
-          sizes="(max-width: 768px) 50vw, 55vw"
+          priority={true}
+          quality={85}
+          sizes="(max-width: 768px) 100vw, 55vw" /* Updated for mobile full-width */
           className={styles.heroImage}
         />
       </div>

@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
-import { ShieldCheck, Eye, Target, Sparkles, Activity, Heart } from 'lucide-react'
+import { motion, Variants } from 'framer-motion'
+import { ShieldCheck, Eye, Target, Activity, Heart } from 'lucide-react'
 import styles from './AboutUs.module.css'
 import Image from 'next/image'
 
@@ -10,19 +10,19 @@ export default function AboutUsPage() {
   // Apple-grade calibrated physics config
   const springTransition = { type: 'spring', stiffness: 90, damping: 20 } as const;
 
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0, 
       transition: { 
         duration: 0.8, 
-        ease: [0.16, 1, 0.3, 1] as const 
+        ease: [0.16, 1, 0.3, 1]
       } 
     }
   }
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -31,7 +31,7 @@ export default function AboutUsPage() {
   }
 
   return (
-    <div className={styles.pageViewport}>
+    <main className={styles.pageViewport}>
       {/* SECTION 1: HERO CANVAS */}
       <section className={styles.heroSection}>
         <div className={styles.sectionContainer}>
@@ -42,7 +42,7 @@ export default function AboutUsPage() {
               <motion.h1 
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className={styles.heroTitle}
               >
                 Driven by Science. <br />
@@ -66,20 +66,19 @@ export default function AboutUsPage() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] as const }}
+              transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className={styles.heroVisualCanvas}
             >
-              {/* Added z-index to keep the gradient overlay on top of the image */}
               <div className={styles.gradientScrimOverlay} style={{ zIndex: 10 }} />
               
-              {/* Inserted the provided image here */}
               <Image
                 src="/aboutus/aboutus-img.png" 
                 alt="BioGenX Laboratory Research and Development"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px" /* Crucial for mobile performance */
                 style={{ objectFit: 'cover' }}
-                priority /* Important for hero images to load quickly */
-                className="transition-transform duration-700 hover:scale-105" /* Added a subtle zoom-on-hover effect */
+                priority
+                className="transition-transform duration-700 hover:scale-105" 
               />
             </motion.div>
           </div>
@@ -181,6 +180,6 @@ export default function AboutUsPage() {
           </p>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }
